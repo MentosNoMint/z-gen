@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-unbounded: "Unbounded", sans-serif;
+  --font-helvetica: "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/HelveticaNeue-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/HelveticaNeue-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/HelveticaNeue-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@layer utilities {
+  .animation-limit {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+body {
+  /* font-family: "Helvetica Neue", sans-serif; */
+  font-family: "Unbounded", sans-serif;
+}
