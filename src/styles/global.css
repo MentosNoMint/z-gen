@@ -1,42 +1,92 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Gramatika";
+  src: url("/fonts/GramatikaRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GramatikaBold";
+  src: url("/fonts/GramatikaBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GramatikaSlanted";
+  src: url("/fonts/GramatikaSlanted.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GramatikaBoldSlanted";
+  src: url("/fonts/GramatikaBoldSlanted.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GramatikaShifted";
+  src: url("/fonts/GramatikaShifted.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GramatikaBoldShifted";
+  src: url("/fonts/GramatikaBoldShifted.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-unbounded: "Unbounded", sans-serif;
-  --font-helvetica: "Helvetica Neue", sans-serif;
+  --font-gramatika: "Gramatika", sans-serif;
+  --font-gramatika-slanted: "GramatikaSlanted", sans-serif;
+  --font-gramatika-bold-slanted: "GramatikaBoldSlanted", sans-serif;
+  --font-gramatika-shifted: "GramatikaShifted", sans-serif;
+  --font-gramatika-bold-shifted: "GramatikaBoldShifted", sans-serif;
+  --font-gramatika-bold: "GramatikaBold", sans-serif;
 }
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/HelveticaNeue-Light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/HelveticaNeue-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/HelveticaNeue-Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 
 @layer utilities {
   .animation-limit {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
+
+  .sock-rotate {
+    animation: sock-rotate 4s ease-in-out infinite;
+  }
 }
 
 body {
-  /* font-family: "Helvetica Neue", sans-serif; */
-  font-family: "Unbounded", sans-serif;
+  font-family: var(--font-gramatika);
+}
+
+@keyframes sock-rotate {
+  0% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(-1);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@media (min-width: 48rem) {
+  html {
+    font-size: calc(0.90vw);
+  }
 }

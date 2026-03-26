@@ -2,6 +2,7 @@
 import "@/styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import { Preloader } from "@/components/layout/preloader";
+import { Header } from "@/components/layout/header";
 ---
 
 <!doctype html>
@@ -38,11 +39,12 @@ import { Preloader } from "@/components/layout/preloader";
       name="generator"
       content={Astro.generator}
     />
-    <title>Astro Basics</title>
+    <title>⚠️ ваш браузер сейчас взорвется ⚠️</title>
     <ClientRouter />
   </head>
   <body>
-    <Preloader client:load />
+    <!-- <Preloader client:load /> -->
+    <Header />
     <slot />
   </body>
 </html>
@@ -55,3 +57,16 @@ import { Preloader } from "@/components/layout/preloader";
     height: 100%;
   }
 </style>
+
+<script>
+  const defaultTitle = "⚠️ ваш браузер сейчас взорвется ⚠️";
+  const blurTitle = "❗ вернись, я тут данные ворую 😭";
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      document.title = blurTitle;
+    } else {
+      document.title = defaultTitle;
+    }
+  });
+</script>
