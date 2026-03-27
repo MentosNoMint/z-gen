@@ -1,6 +1,7 @@
 import { GlitchFontText } from "../../ui/animation/glitch-font-text";
 import { AnimatedArrow } from "../../ui/animation/animated-arrow";
 import { WindyText } from "./windy-text";
+import { About } from "./about";
 
 export const HeroSection = () => {
   return (
@@ -53,7 +54,8 @@ export const HeroSection = () => {
           className="h-28.5 w-auto ml-8 mt-1 rounded-xl"
         />
       </div>
-      <WindyText 
+      <About />
+      {/* <WindyText 
         words={[
           "Three.js", 
           "WebGL",  
@@ -64,7 +66,7 @@ export const HeroSection = () => {
           "Tailwind", 
           "Astro.build"
         ]} 
-      />
+      /> */}
     </div>
   );
 };

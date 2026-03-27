@@ -4,6 +4,7 @@ import { ClientRouter } from "astro:transitions";
 import { Preloader } from "@/components/layout/preloader";
 import { Header } from "@/components/layout/header";
 import { Window } from "@/components/ui/common/window";
+import { AlienModelRender } from "@/components/three/alien-model/AlienModelRender";
 ---
 
 <!doctype html>
@@ -47,6 +48,9 @@ import { Window } from "@/components/ui/common/window";
     <!-- <Preloader client:load /> -->
     <Header />
     <Window />
+    <div transition:persist="alien-model">
+      <AlienModelRender client:only="react" />
+    </div>
     <slot />
   </body>
 </html>
