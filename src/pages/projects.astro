@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProjectsSection from '../components/sections/projects-section';
 
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,5 +8,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  
+  <div class="w-full">
+    <ProjectsSection client:load />
+  </div>
 </Layout>;

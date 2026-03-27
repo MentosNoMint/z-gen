@@ -1,10 +1,17 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP);
 
-export const AnimatedArrow = () => {
+export const AnimatedArrow = ({
+  rotate,
+  size,
+}: {
+  rotate?: boolean;
+  size?: number;
+}) => {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -21,8 +28,12 @@ export const AnimatedArrow = () => {
 
   return (
     <div
-      className="w-31 h-31 flex animation-limit relative pointer-events-none mx-4"
+      className={cn(
+        "w-31 h-31 flex animation-limit relative pointer-events-none mx-4",
+        rotate && "rotate-90",
+      )}
       ref={container}
+      style={{ scale: size }}
     >
       <div className="flex relative w-full h-full arrow">
         <img

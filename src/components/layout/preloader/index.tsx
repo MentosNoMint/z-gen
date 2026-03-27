@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { GlitchFontText } from "@/components/ui/glitch-font-text";
+import { GlitchFontText } from "@/components/ui/animation/glitch-font-text";
 
 gsap.registerPlugin(useGSAP);
 
@@ -18,7 +18,7 @@ export const Preloader = () => {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({delay: 2});
+      const tl = gsap.timeline({ delay: 2 });
       const skewer = gsap.quickSetter(".gsap-char", "skewX", "deg");
       const shifter = gsap.quickSetter(".gsap-char", "x", "px");
       const trackSetter = gsap.quickSetter(".ticker-track", "x", "px");

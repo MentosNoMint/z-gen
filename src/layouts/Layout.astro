@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import { Preloader } from "@/components/layout/preloader";
 import { Header } from "@/components/layout/header";
+import { Window } from "@/components/ui/common/window";
 ---
 
 <!doctype html>
@@ -45,6 +46,7 @@ import { Header } from "@/components/layout/header";
   <body>
     <!-- <Preloader client:load /> -->
     <Header />
+    <Window />
     <slot />
   </body>
 </html>

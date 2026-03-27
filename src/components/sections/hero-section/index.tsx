@@ -1,9 +1,10 @@
-import { GlitchFontText } from "../../ui/glitch-font-text";
-import { AnimatedArrow } from "./animated-arrow";
+import { GlitchFontText } from "../../ui/animation/glitch-font-text";
+import { AnimatedArrow } from "../../ui/animation/animated-arrow";
+import { WindyText } from "./windy-text";
 
 export const HeroSection = () => {
   return (
-    <div className="w-full flex flex-col overflow-hidden mt-2">
+    <div className="w-full flex flex-col overflow-hidden mt-2 max-w-full overflow-x-hidden">
       <div className="w-full flex">
         <span className="text-9xl font-gramatika-bold-slanted leading-28 tracking-tight">
           Хеллоу
@@ -52,6 +53,18 @@ export const HeroSection = () => {
           className="h-28.5 w-auto ml-8 mt-1 rounded-xl"
         />
       </div>
+      <WindyText 
+        words={[
+          "Three.js", 
+          "WebGL",  
+          "GSAP", 
+          "React", 
+          "Next.js", 
+          "TypeScript", 
+          "Tailwind", 
+          "Astro.build"
+        ]} 
+      />
     </div>
   );
 };
